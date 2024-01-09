@@ -20,7 +20,8 @@ Route::get('/', function () {
 
 //page routes
 Route::get('index',[PageController::class,'index'])->name('index');
-Route::get('404',[PageController::class,'error'])->name('404');
+// Route::get('404',[PageController::class,'error'])->name('404');
+Route::fallback(PageController::class)->name('404');
 Route::get('about',[PageController::class,'about'])->name('about');
 Route::get('appointment',[PageController::class,'appointment'])->name('appointment');
 Route::get('call-to-action',[PageController::class,'callToAction'])->name('call-to-action');

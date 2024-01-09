@@ -10,10 +10,16 @@ class PageController extends Controller
     {
         return view("index");
     }
-    public function error()
+
+    // public function error()
+    // {
+    //     return view("404");
+    // }
+    public function __invoke()
     {
-        return view("404");
+        return view('404');
     }
+
     public function about()
     {
         return view("about");

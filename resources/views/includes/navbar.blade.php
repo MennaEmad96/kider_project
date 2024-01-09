@@ -11,7 +11,7 @@
             <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : ''}}">About Us</a>
             <a href="{{ route('classes') }}" class="nav-item nav-link {{ request()->is('classes') ? 'active' : ''}}">Classes</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ request()->is('facility','team','call-to-action','appointment','testimonial','404') ? 'active' : ''}}" data-bs-toggle="dropdown">Pages</a>
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('facility','team','call-to-action','appointment','testimonial') ? 'active' : ''}}" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
                     <a href="{{ route('facility') }}" class="dropdown-item {{ request()->is('facility') ? 'active' : ''}}">School Facilities</a>
                     <a href="{{ route('team') }}" class="dropdown-item {{ request()->is('team') ? 'active' : ''}}">Popular Teachers</a>
