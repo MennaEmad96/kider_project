@@ -22,7 +22,7 @@ class TeacherFactory extends Factory
         $nameVariable = fake()->firstName();
         return [
             'name' => $nameVariable,
-            'designation' => fake()->dateTime(),
+            'designation' => fake()->date(),
             'facebook' => $nameVariable."@facebook.com",
             'twitter' => $nameVariable."@twitter.com",
             'instgram' => $nameVariable."@instgram.com",

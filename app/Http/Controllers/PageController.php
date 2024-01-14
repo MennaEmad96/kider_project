@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Testimonial;
+use App\Models\Classroom;
 use App\Models\Contact;
 use App\Models\Appointment;
 use App\Mail\ContactMail;
@@ -14,7 +15,8 @@ class PageController extends Controller
     public function index()
     {
         $testimonials = Testimonial::get();
-        return view("index", compact('testimonials'));
+        $classrooms = Classroom::get();
+        return view("index", compact('testimonials', 'classrooms'));
     }
     // public function error()
     // {
@@ -40,7 +42,8 @@ class PageController extends Controller
     public function classes()
     {
         $testimonials = Testimonial::get();
-        return view("classes", compact('testimonials'));
+        $classrooms = Classroom::get();
+        return view("classes", compact('testimonials', 'classrooms'));
     }
     public function contact()
     {

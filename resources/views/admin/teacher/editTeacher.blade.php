@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="designation">Designation:</label>
-                <input type="datetime-local" class="form-control" id="designation" placeholder="Enter designation" name="designation" value="{{ $teacher->designation }}">
+                <input type="date" class="form-control" id="designation" placeholder="Enter designation" name="designation" value="{{ $teacher->designation }}">
                 @error('designation')
                     {{ $message }}
                 @enderror

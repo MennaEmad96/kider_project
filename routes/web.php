@@ -76,10 +76,11 @@ Route::post('storeClassroom',[ClassroomController::class,'store'])->name('storeC
 Route::get('showClassroom/{id}',[ClassroomController::class,'show'])->name('showClassroom');
 Route::get('editClassroom/{id}',[ClassroomController::class,'edit'])->name('editClassroom');
 Route::put('updateClassroom/{id}',[ClassroomController::class,'update'])->name('updateClassroom');
-Route::get('deleteClassroom/{id}',[ClassroomController::class,'delete'])->name('deleteClassroom');
-Route::get('trashedClassrooms',[ClassroomController::class,'trashed'])->name('trashedClassrooms');
-Route::get('restoreClassroom/{id}',[ClassroomController::class,'restore'])->name('restoreClassroom');
-Route::get('forceDeleteClassroom/{id}',[ClassroomController::class,'destroy'])->name('forceDeleteClassroom');
+Route::get('deleteClassroom/{id}',[ClassroomController::class,'destroy'])->name('deleteClassroom');
+//not used
+// Route::get('trashedClassrooms',[ClassroomController::class,'trashed'])->name('trashedClassrooms');
+// Route::get('restoreClassroom/{id}',[ClassroomController::class,'restore'])->name('restoreClassroom');
+// Route::get('forceDeleteClassroom/{id}',[ClassroomController::class,'destroy'])->name('forceDeleteClassroom');
 
 //appointment routes
 Route::get('appointments',[AppointmentController::class,'index'])->name('appointments');

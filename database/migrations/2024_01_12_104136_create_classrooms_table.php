@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('image',100);
             $table->boolean('published');
             $table->foreignId('teacher_id')->constrained('teachers');
-            $table->softDeletes();
             $table->timestamps();
         });
     }

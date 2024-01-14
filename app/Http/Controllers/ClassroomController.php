@@ -56,7 +56,8 @@ class ClassroomController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $classroom = Classroom::findOrFail($id);
+        return view('admin/classroom/showClassroom', compact('classroom'));
     }
 
     /**
@@ -64,7 +65,9 @@ class ClassroomController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $classroom = Classroom::findOrFail($id);
+        $teachers = Teacher::get();
+        return view('admin/classroom/editClassroom', compact("classroom", "teachers"));
     }
 
     /**
@@ -72,7 +75,26 @@ class ClassroomController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $messages=$this->messages();
+        $data = $request->validate([
+            'name'=>'required|string|max:50',
+            'age'=>'required|string',
+            'time' => 'required|string',
+            'capacity' => 'required|integer',
+            'cost' => 'required|numeric',
+            'image' => 'sometimes|mimes:png,jpg,jpeg|max:2048',
+            'teacher_id' => 'required|exists:teachers,id',
+        ], $messages);
+        if($request->hasFile('image')){
+            //use method from traits called uploadFile
+            $fileName = $this->uploadFile($request->image, 'assets/images');
+            $data['image'] = $fileName;
+            //remove old image from server
+            unlink("assets/images/".$request->oldImageName);
+        }
+        $data['published'] = isset($request->published);
+        Classroom::where('id', $id)->update($data);
+        return redirect('classrooms');
     }
 
     /**
@@ -80,7 +102,8 @@ class ClassroomController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Classroom::where('id', $id)->delete();    // softdelete
+        return redirect('classrooms');
     }
 
     public function messages()

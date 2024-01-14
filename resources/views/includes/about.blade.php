@@ -7,7 +7,7 @@
                 <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos, ipsum labore duo duo sit no sea diam. Et dolor et kasd ea. Eirmod diam at dolor est vero nonumy magna.</p>
                 <div class="row g-4 align-items-center">
                     <div class="col-sm-6">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ route('about') }}">Read More</a>
                     </div>
                     <div class="col-sm-6">
                         <div class="d-flex align-items-center">
