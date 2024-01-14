@@ -18,13 +18,3 @@
     @include('includes.appointment')
     <!-- Appointment End -->
 @endsection
-
-
-
-        
-
-
-        
-
-        
-
