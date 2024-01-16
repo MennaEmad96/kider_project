@@ -7,16 +7,21 @@ use App\Models\Testimonial;
 use App\Models\Classroom;
 use App\Models\Contact;
 use App\Models\Appointment;
+use App\Models\Teacher;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
+use DB;
 
 class PageController extends Controller
 {
     public function index()
     {
-        $testimonials = Testimonial::get();
-        $classrooms = Classroom::get();
-        return view("index", compact('testimonials', 'classrooms'));
+        $testimonials = Testimonial::where('published', 1)->orderBy('id', 'desc')->take(3)->get();
+        // $sql = "SELECT * FROM `testimonials` WHERE `published` = 1 ORDER BY `id` DESC LIMIT 3";
+        // $testimonials = DB::select($sql);
+        $classrooms = Classroom::where('published', 1)->orderBy('id', 'desc')->take(9)->get();
+        $teachers = Teacher::where('published', 1)->orderBy('id', 'desc')->take(3)->get();
+        return view("index", compact('testimonials', 'classrooms','teachers'));
     }
     // public function error()
     // {
@@ -29,7 +34,8 @@ class PageController extends Controller
 
     public function about()
     {
-        return view("about");
+        $teachers = Teacher::where('published', 1)->orderBy('id', 'desc')->take(3)->get();
+        return view("about", compact('teachers'));
     }
     public function appointment()
     {
@@ -42,7 +48,7 @@ class PageController extends Controller
     public function classes()
     {
         $testimonials = Testimonial::get();
-        $classrooms = Classroom::get();
+        $classrooms = Classroom::where('published', 1)->orderBy('id', 'desc')->get();
         return view("classes", compact('testimonials', 'classrooms'));
     }
     public function contact()
@@ -55,11 +61,13 @@ class PageController extends Controller
     }
     public function team()
     {
-        return view("team");
+        $teachers = Teacher::get();
+        return view("team", compact('teachers'));
     }
     public function testimonial()
     {
-        $testimonials = Testimonial::get();
+        $sql = "SELECT * FROM `testimonials` WHERE `published` = 1";
+        $testimonials = DB::select($sql);
         return view("testimonial", compact('testimonials'));
     }
 

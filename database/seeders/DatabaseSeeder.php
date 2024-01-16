@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Testimonial;
 use App\Models\Contact;
 use App\Models\Appointment;
@@ -20,12 +21,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(2)->create();
 
-        // User::factory(3)->create();
-        Testimonial::factory(2)->create();
-        Contact::factory(2)->create();
-        Appointment::factory(2)->create();
-        Teacher::factory(2)->create();
-        Classroom::factory(2)->create();
+        User::factory(1)->create();
+        Testimonial::factory(10)->create();
+        Contact::factory(4)->create();
+        Appointment::factory(4)->create();
+        Teacher::factory(10)->create();
+        Classroom::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

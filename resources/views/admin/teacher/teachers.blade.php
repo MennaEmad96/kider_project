@@ -31,10 +31,7 @@
         @foreach($teachers as $teacher)
             <tr>
                 <td>{{ $teacher->name }}</td>
-                <td>{{ date('d-m-Y', strtotime($teacher->desgination)) }}</td>
-                {{--{{$item->date_seance->toDateString() }}   
-                {{ $teacher->desgination->toDateString() }}   
-                {{ $teacher->date->format('dd, mm, YY') }}--}}
+                <td>{{ date('d-m-Y', strtotime($teacher->designation)) }}</td>
                 <td>{{ $teacher->facebook }}</td>
                 <td>{{ $teacher->twitter }}</td>
                 <td>{{ $teacher->instgram }}</td>

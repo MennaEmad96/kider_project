@@ -17,7 +17,7 @@ class TestimonialFactory extends Factory
     public function definition(): array
     {
         //generates actual image into local server using faker provider
-        $fakerFileName = $this->faker->image("public/assets/images", 800, 600);
+        $fakerFileName = $this->faker->image("public/assets/images", 100, 100);
 
         return [
             'name' => fake()->firstName(),
@@ -25,7 +25,9 @@ class TestimonialFactory extends Factory
             'description' => fake()->text(),
             //save image name into database
             'image' => basename($fakerFileName),
-            'published' => fake()->numberBetween(0, 1),
+            // 'published' => fake()->numberBetween(0, 1),
+            'published' => 1,
+
         ];
     }
 }

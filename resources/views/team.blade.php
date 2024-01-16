@@ -25,7 +25,6 @@
             </div>
             <div class="row g-4">
                 @include('includes.team')
-                @include('includes.team')
             </div>
         </div>
     </div>

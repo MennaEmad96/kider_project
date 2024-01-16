@@ -17,7 +17,7 @@ class ClassroomFactory extends Factory
     public function definition(): array
     {
         //generates actual image into local server using faker provider
-        $fakerFileName = $this->faker->image("public/assets/images", 800, 600);
+        $fakerFileName = $this->faker->image("public/assets/images", 400, 400);
 
         return [
             'name' => fake()->firstName(),
@@ -27,8 +27,9 @@ class ClassroomFactory extends Factory
             'cost' => fake()->numberBetween(70, 100),
             //save image name into database
             'image' => basename($fakerFileName),
-            'published' => fake()->numberBetween(0, 1),
-            'teacher_id' => fake()->numberBetween(1, 2),
+            // 'published' => fake()->numberBetween(0, 1),
+            'published' => 1,
+            'teacher_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

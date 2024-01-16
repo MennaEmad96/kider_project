@@ -17,6 +17,7 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::get();
         return view('admin/teacher/teachers', compact('teachers'));
+        // return dd($teachers);
     }
 
     /**
