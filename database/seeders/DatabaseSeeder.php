@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(2)->create();
 
         User::factory(1)->create();
-        Testimonial::factory(10)->create();
-        Contact::factory(4)->create();
-        Appointment::factory(4)->create();
-        Teacher::factory(10)->create();
-        Classroom::factory(10)->create();
+        // Testimonial::factory(10)->create();
+        // Contact::factory(4)->create();
+        // Appointment::factory(4)->create();
+        // Teacher::factory(10)->create();
+        // Classroom::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

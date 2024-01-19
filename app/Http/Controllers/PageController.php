@@ -12,6 +12,9 @@ use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use DB;
 
+// sweet alert
+use RealRashid\SweetAlert\Facades\Alert;
+
 class PageController extends Controller
 {
     public function index()

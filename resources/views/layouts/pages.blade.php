@@ -30,7 +30,10 @@
     @include('includes.javascriptLibraries')
     <!-- Template Javascript -->
     @include('includes.templateJavascript')
-    
+
+    <!-- sweet alert -->
+    @include('sweetalert::alert')
+
 </body>
 
 </html>
