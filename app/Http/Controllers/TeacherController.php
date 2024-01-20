@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Classroom;
 use App\Traits\Common;
 use DB;
+
+// sweet alert
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TeacherController extends Controller
 {
@@ -99,8 +103,15 @@ class TeacherController extends Controller
      */
     public function delete(string $id)
     {
-        Teacher::where('id', $id)->delete();    // softdelete
-        return redirect('teachers');
+        $found = Classroom::where('teacher_id', $id)->get("teacher_id");
+        // return $found;
+        if(isset($found[0])){
+            // return redirect('teachers');
+            return back()->with('error',"This teacher is linked to a class. It can't be deleted");
+        }else{
+            Teacher::where('id', $id)->delete();    // softdelete
+            return redirect('teachers');
+        }
     }
 
     public function trashed()

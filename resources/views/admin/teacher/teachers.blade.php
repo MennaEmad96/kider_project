@@ -45,5 +45,7 @@
         </tbody>
     </table>
     </div>
+    <!-- sweet alert -->
+    @include('sweetalert::alert')
 </body>
 </html>
