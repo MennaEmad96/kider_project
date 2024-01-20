@@ -103,9 +103,8 @@ class TeacherController extends Controller
      */
     public function delete(string $id)
     {
-        $found = Classroom::where('teacher_id', $id)->get("teacher_id");
-        // return $found;
-        if(isset($found[0])){
+        $found = Classroom::where('teacher_id', $id)->count();
+        if($found){
             // return redirect('teachers');
             return back()->with('error',"This teacher is linked to a class. It can't be deleted");
         }else{

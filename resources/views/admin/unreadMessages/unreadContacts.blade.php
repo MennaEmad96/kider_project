@@ -36,10 +36,6 @@
         @endforeach
         </tbody>
     </table>
-    <!-- Pagination -->
-    <div class="d-flex justify-content-center">
-        {!! $contacts->links() !!}
-    </div>
     </div>
 </body>
 </html>

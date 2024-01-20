@@ -6,6 +6,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UnreadController;
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -57,4 +58,11 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('contacts',[ContactController::class,'index'])->name('contacts');
     Route::get('showContact/{id}',[ContactController::class,'show'])->name('showContact');
     Route::get('deleteContact/{id}',[ContactController::class,'destroy'])->name('deleteContact');
+
+    //contact routes
+    Route::get('unreadContacts',[UnreadController::class,'index'])->name('unreadContacts');
+    Route::get('showContact/{id}',[UnreadController::class,'show'])->name('showContact');
+    Route::get('deleteContact/{id}',[UnreadController::class,'destroy'])->name('deleteContact');
+
+    
 });

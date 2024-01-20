@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.3",
         "mcamara/laravel-localization": "^1.8",
+        "michaloravec/laravel-paginateroute": "^1.0",
         "realrashid/sweet-alert": "^7.1"
     },
     "require-dev": {

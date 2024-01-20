@@ -29,7 +29,7 @@ class ClassroomFactory extends Factory
             'image' => basename($fakerFileName),
             // 'published' => fake()->numberBetween(0, 1),
             'published' => 1,
-            'teacher_id' => fake()->numberBetween(1, 10),
+            'teacher_id' => fake()->numberBetween(1, 2),
         ];
     }
 }

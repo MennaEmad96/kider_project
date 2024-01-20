@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
-class ContactController extends Controller
+class UnreadController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $contacts = Contact::paginate(2);
-        return view('admin/contact/contacts', compact('contacts'));
+        $contacts = Contact::where('flag', 0)->get();
+        return view('admin/unreadMessages/unreadContacts', compact('contacts'));
     }
 
     /**
@@ -39,7 +39,7 @@ class ContactController extends Controller
     {
         Contact::where('id', $id)->update(['flag' => 1]);
         $contact = Contact::findOrFail($id);
-        return view('admin/contact/showContact', compact('contact'));
+        return view('admin/unreadMessages/showUnreadContact', compact('contact'));
     }
 
     /**
@@ -64,6 +64,6 @@ class ContactController extends Controller
     public function destroy(string $id)
     {
         Contact::where('id', $id)->delete();
-        return redirect('contacts');
+        return redirect('unreadContacts');
     }
 }
