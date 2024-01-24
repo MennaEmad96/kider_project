@@ -62,7 +62,7 @@ Route::group(['middleware' => ['verified']], function () {
     //contact routes
     Route::get('unreadContacts',[UnreadController::class,'index'])->name('unreadContacts');
     Route::get('showContact/{id}',[UnreadController::class,'show'])->name('showContact');
-    Route::get('deleteContact/{id}',[UnreadController::class,'destroy'])->name('deleteContact');
+    Route::get('deleteUnreadContact/{id}',[UnreadController::class,'destroy'])->name('deleteUnreadContact');
 
     
 });

@@ -50,7 +50,7 @@ class PageController extends Controller
     }
     public function classes()
     {
-        $testimonials = Testimonial::get();
+        $testimonials = Testimonial::where('published', 1)->get();
         $classrooms = Classroom::where('published', 1)->orderBy('id', 'desc')->get();
         return view("classes", compact('testimonials', 'classrooms'));
     }
@@ -64,7 +64,7 @@ class PageController extends Controller
     }
     public function team()
     {
-        $teachers = Teacher::get();
+        $teachers = Teacher::where('published', 1)->get();
         return view("team", compact('teachers'));
     }
     public function testimonial()

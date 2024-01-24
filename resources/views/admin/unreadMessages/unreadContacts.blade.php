@@ -31,7 +31,7 @@
                 <td>{{ $contact->subject }}</td>
                 <td>{{ Str::limit($contact->message, 20) }}</td>
                 <td><a href="{{ route('showContact', ['id'=>$contact->id]) }}">Show</a></td>
-                <td><a href="{{ route('deleteContact', ['id'=>$contact->id]) }}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                <td><a href="{{ route('deleteUnreadContact', ['id'=>$contact->id]) }}" onclick="return confirm('Are you sure?')">Delete</a></td>
             </tr>
         @endforeach
         </tbody>

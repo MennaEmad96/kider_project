@@ -41,5 +41,5 @@ Route::get('testimonial',[PageController::class,'testimonial'])->name('testimoni
 Route::post('contactForm',[PageController::class,'contactForm'])->name('contactForm');
 Route::post('appointmentForm',[PageController::class,'appointmentForm'])->name('appointmentForm');
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

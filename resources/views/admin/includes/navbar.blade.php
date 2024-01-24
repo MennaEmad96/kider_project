@@ -33,7 +33,7 @@
         </ul>
       </li>
       <li><a href="{{ route('contacts') }}">Contact Us</a></li>
-      <li><a href="{{ route('unreadContacts') }}">Unread Messages</a></li>
+      <li><a href="{{ route('unreadContacts') }}">Unread Messages ({{ $unread }})</a></li>
       <li><a href="{{ route('appointments') }}">Appointments</a></li>
     </ul>
   </div>

@@ -25,8 +25,8 @@ class TestimonialFactory extends Factory
             'description' => fake()->text(),
             //save image name into database
             'image' => basename($fakerFileName),
-            // 'published' => fake()->numberBetween(0, 1),
-            'published' => 1,
+            'published' => fake()->numberBetween(0, 1),
+            // 'published' => 1,
 
         ];
     }

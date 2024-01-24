@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <td>Description</td>
-                <td>{{ $testimonial->description }}</td>
+                <td style="word-break:break-all;">{{ $testimonial->description }}</td>
             </tr>
             @if($testimonial->deleted_at)
             <tr>
