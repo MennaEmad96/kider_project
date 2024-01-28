@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//page routes
+//page complete routes
 Route::get('index',[PageController::class,'index'])->name('index');
 // Route::get('404',[PageController::class,'error'])->name('404');
 Route::fallback(PageController::class)->name('404');
